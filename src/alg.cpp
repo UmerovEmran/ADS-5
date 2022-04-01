@@ -3,6 +3,22 @@
 #include <map>
 #include "tstack.h"
 
+int prioritet(char op) {
+  switch (op) {
+    case '(':
+      return 0;
+    case ')':
+      return 1;
+    case '+':case '-':
+      return 2;
+    case '*':case '/':
+      return 3;
+    case ' ':
+        return 5;
+    default:
+      return 4;
+  }
+}
 std::string infx2pstfx(std::string inf) {
   TStack<char, 100> stack1;
   std::string vih;
